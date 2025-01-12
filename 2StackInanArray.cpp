@@ -13,14 +13,14 @@ public:
     {
         this->size = size;
         arr = new int[size];
-        top1 = -1;  
-        top2 = size; 
+        top1 = -1;
+        top2 = size;
     }
 
     // Push to Stack 1
     void push1(int data)
     {
-        if (top1 < top2 - 1) 
+        if (top1 < top2 - 1)
         {
             arr[++top1] = data;
         }
@@ -33,7 +33,7 @@ public:
     // Push to Stack 2
     void push2(int data)
     {
-        if (top1 < top2 - 1) 
+        if (top1 < top2 - 1)
         {
             arr[--top2] = data;
         }
@@ -46,7 +46,7 @@ public:
     // Pop from Stack 1
     int pop1()
     {
-        if (top1 >= 0) 
+        if (top1 >= 0)
         {
             return arr[top1--];
         }
@@ -67,7 +67,7 @@ public:
         else
         {
             cout << "Stack Underflow" << endl;
-            return -1; 
+            return -1;
         }
     }
 
@@ -99,7 +99,6 @@ public:
         }
     }
 
- 
     bool isEmptyStack1()
     {
         return top1 == -1;
@@ -109,12 +108,11 @@ public:
     {
         return top2 == size;
     }
-
 };
 
 int main()
 {
-    TwoStacks ts(10); 
+    TwoStacks ts(10);
 
     ts.push1(5);
     ts.push1(10);
@@ -132,6 +130,7 @@ int main()
 
     cout << "After popping, Top of Stack 1: " << ts.peek1() << endl;
     cout << "After popping, Top of Stack 2: " << ts.peek2() << endl;
+    cout << ts.isEmptyStack1();
 
     return 0;
 }
